@@ -1,0 +1,51 @@
+<div class="container">
+    <h3 class="text-center">TABLE</h3>
+    <div>
+           <label>SearchByTitle</label>
+            <input type="text" [(ngModel)]="term">
+
+    </div>
+    
+<table class="table  table-bordered teble-responsive">
+<thead>
+<tr>
+    <th>title</th>
+    <th>Url</th>
+    <th>Created_At</th>
+    <th>Author</th>
+</tr>
+</thead>
+<tbody>
+    <tr *ngFor="let t of table | search : term" (click)="button(t)" data-toggle="modal" data-target="#modalid" [ngClass]="{'changeColor':t.title==selectedTitle}">
+<td>{{t.title}}</td>
+<td>{{t.url}}</td>
+<td>{{t.created_at | date : 'EEEE hh:mm:ss'}}</td>
+<td>{{t.author}}</td>
+</tr>
+</tbody>
+</table>
+</div>
+
+
+<div class="modal" id="modalid">
+    <div class="modal-dialog">
+            <div class="modal-content">
+                    <div class="modal-header">
+<h4 class="modal-title">Details</h4>
+<button type="button" class="close" data-dismiss="modal">&times;</button>
+</div>
+<div class="modal-body">
+    <pre>{{th|json}}</pre>
+</div>
+<div class="modal-footer">
+        <button type="button" class="btn btn-info" data-dismiss="modal">close</button>
+</div>
+
+    </div>
+    </div>
+    </div>
+    
+
+
+
+

@@ -1,0 +1,9 @@
+table tr.changeColor{
+    background-color: aqua;
+}
+thead{
+    background-color:gray ; 
+    }
+    h3{
+        background-color:lavender;  
+     }
